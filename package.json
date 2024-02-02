@@ -8,7 +8,7 @@
    "license": "Apache-2.0",
    "scripts": {
       "test": "standard && nyc --reporter=lcov mocha tests/*",
-      "start": "node app/src/server.ts",
+      "start": "node dist/server.js",
       "coverage": "codecov",
       "ts": "ts-node --files",
       "dev": "nodemon app/src/server.ts",
