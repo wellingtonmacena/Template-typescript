@@ -1,0 +1,84 @@
+{
+   "name": "typescript-backend-template",
+   "version": "0.0.1",
+   "main": "src/main.ts",
+   "repository": "git@github.com:myfreax/typescript-backend-template.git",
+   "home": "https://www.myfreax.com",
+   "author": "myfreax <web@myfreax.com>",
+   "license": "Apache-2.0",
+   "scripts": {
+      "test": "standard && nyc --reporter=lcov mocha tests/*",
+      "start": "node app/src/server.ts",
+      "coverage": "codecov",
+      "ts": "ts-node --files",
+      "dev": "nodemon app/src/server.ts",
+      "build": "tsc",
+      "postinstall": "husky install",
+      "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+      "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+      "test:cov": "jest --coverage",
+      "test:e2e": "jest --detectOpenHandles --config jest.json",
+      "prepare": "husky install"
+   },
+   "lint-staged": {
+      "*.ts": [
+         "eslint",
+         "prettier --write"
+      ]
+   },
+   "jest": {
+      "moduleFileExtensions": [
+         "js",
+         "json",
+         "ts"
+      ],
+      "rootDir": "src",
+      "testRegex": ".*\\.spec\\.ts$",
+      "transform": {
+         "^.+\\.(t|j)s$": "ts-jest"
+      },
+      "collectCoverageFrom": [
+         "**/*.(t|j)s"
+      ],
+      "coverageDirectory": "../coverage",
+      "testEnvironment": "node"
+   },
+   "dependencies": {
+      "compression": "^1.7.4",
+      "convert-multiple-files": "^1.2.5",
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "libreoffice": "^0.4.5",
+      "libreoffice-convert": "^1.5.1",
+      "morgan": "^1.10.0",
+      "winston": "^3.2.1"
+   },
+   "devDependencies": {
+      "@commitlint/cli": "^17.0.1",
+      "@commitlint/config-conventional": "^17.0.0",
+      "@types/jest": "^28.1.6",
+      "@types/node": "^18.6.5",
+      "@types/supertest": "^2.0.11",
+      "@typescript-eslint/eslint-plugin": "^5.26.0",
+      "@typescript-eslint/parser": "^5.26.0",
+      "chai": "^4.2.0",
+      "chai-http": "^4.3.0",
+      "codecov": "^3.7.1",
+      "eslint": "^8.16.0",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-prettier": "^4.0.0",
+      "husky": "^8.0.1",
+      "jest": "^28.1.0",
+      "lint-staged": "^13.0.3",
+      "mocha": "^7.1.1",
+      "nodemon": "^2.0.3",
+      "nyc": "^15.0.0",
+      "prettier": "^2.3.0",
+      "standard": "^14.3.3",
+      "supertest": "^6.1.3",
+      "ts-jest": "^28.0.3",
+      "ts-node": "^10.8.0",
+      "ts-node-dev": "^2.0.0",
+      "typescript": "^4.7.2"
+   }
+}
